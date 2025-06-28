@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>다크포레스트 서버 후원</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-gray-900 to-gray-800 min-h-screen flex items-center justify-center px-4">
+
+  <div class="bg-white rounded-3xl shadow-2xl w-full max-w-xl p-10">
+    <h1 class="text-4xl font-extrabold text-center text-gray-900 mb-3">🌲 다크포레스트 서버</h1>
+    <p class="text-center text-gray-500 text-lg mb-8">서버 유지에 도움이 되는 금액을 후원해 주세요</p>
+
+    <div class="grid grid-cols-3 gap-4 mb-8">
+      <button onclick="showMessage(100)" class="h-14 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl text-lg transition">100원</button>
+      <button onclick="showMessage(500)" class="h-14 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl text-lg transition">500원</button>
+      <button onclick="showMessage(1000)" class="h-14 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl text-lg transition">1000원</button>
+      <button onclick="showMessage(2000)" class="h-14 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl text-lg transition">2000원</button>
+      <button onclick="showMessage(3000)" class="h-14 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl text-lg transition">3000원</button>
+      <button onclick="showMessage(4000)" class="h-14 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl text-lg transition">4000원</button>
+      <button onclick="showMessage(5000)" class="h-14 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl text-lg transition col-span-3">5000원</button>
+    </div>
+
+    <div id="messageBox" class="hidden mt-6 p-6 bg-yellow-100 border-2 border-yellow-300 text-yellow-900 text-center rounded-2xl text-lg shadow-inner fade-in"></div>
+
+    <p class="text-sm text-gray-400 text-center mt-8">후원금은 전액 서버 유지 및 개발에 사용됩니다 🙇</p>
+  </div>
+
+  <script>
+    function showMessage(amount) {
+      const box = document.getElementById("messageBox");
+      box.innerHTML = `<strong class="text-xl">${amount.toLocaleString()}원</strong> 후원을 원하신다면<br><strong class="text-2xl">토스뱅크 1001-5707-4935</strong> 로 송금해주세요`;
+      box.classList.remove("hidden");
+      box.classList.add("fade-in");
+    }
+  </script>
+
+</body>
+</html>
